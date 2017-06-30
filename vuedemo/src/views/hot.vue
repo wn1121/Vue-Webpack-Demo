@@ -1,3 +1,3 @@
 <template>
-  <div>content</div>
+  <div>hot page</div>
 </template>

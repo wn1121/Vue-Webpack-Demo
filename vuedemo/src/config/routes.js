@@ -3,12 +3,13 @@
  */
 
 // 引用模板
-import index from '../page/index.vue'
-import content from '../page/content.vue'
+import index from '../views/index.vue'
+import content from '../views/content.vue'
 // 引用子路由
-import frame from '../frame/subroute.vue'
+// import frame from '../frame/subroute.vue'
 // 引用子页面
-import userInfo from '../page/user/info.vue'
+import hot from '../views/hot.vue'
+
 // 配置路由
 export default [
   {
@@ -16,16 +17,18 @@ export default [
     component: index
   },
   {
-    path: '/content',
-    component: content
+    path: '/index',
+    component: index
   },
   {
-    path: '/user',
-    component: frame,
+    path: '/content/:id/:username',
+    component: content,
+    name: 'content',
     children: [
       {
-        path: 'info',
-        component: userInfo
+        name: 'hot',
+        path: 'hot',
+        component: hot
       }
     ]
   }
